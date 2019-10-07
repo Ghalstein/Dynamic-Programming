@@ -30,9 +30,9 @@ public class MagicIndex {
   }
 
   public static void main(String[] args) {
-    int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11};
-    int[] arr1 = {0, 2, 2, 2, 3, 4, 5, 6, 7, 8, 9, 11};
-    int[] arr2 = {5, 6, 7, 10};
+    int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11 };
+    int[] arr1 = { 0, 2, 2, 2, 3, 4, 5, 6, 7, 8, 9, 11 };
+    int[] arr2 = { 5, 6, 7, 10 };
 
     System.out.println(find(arr));
     System.out.println(find(arr1));
