@@ -13,7 +13,7 @@ public class LCS {
   public static int find(String s1, String s2) {
     
     // calling the recursive function
-    find(s1, s2, s1.length(), s2.length());
+    return find(s1, s2, s1.length(), s2.length());
   }
 
   // finds the subsequence recursively 
@@ -35,6 +35,6 @@ public class LCS {
   }
 
   public static void main(String[] args) {
-
+    System.out.println(find("ABCBDAB", "BDCABA"));
   }
 }
