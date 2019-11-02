@@ -5,30 +5,33 @@
 * Keep track of the longest sequence
 */
 
-
-
 public class LCS {
 
-  // finds the longest subsequence
+  private static int longest = 0;
+
+  // public call for finding the longest subsequence recursively
   public static int find(String s1, String s2) {
+    
+    // calling the recursive function
+    find(s1, s2, s1.length(), s2.length());
+  }
 
-    int longest = 0;
-
-    // iterate through s1 and find whether s2 has equal char for each index
-    int i = 0;
-    while (i < s1.length()) {
-      int curr2 = 0;
-      int curr1 = i;
-      int relLongest = 0;
-      while (curr2 < s2.length()) {
-        if (s1.charAt(curr1) == s2.charAt(curr2)) {
-          ++relLongest;
-          if (relLongest > longest)
-            longest = relLongest;
-        }
-      }
-      ++i;
+  // finds the subsequence recursively 
+  private static int find(String s1, String s2, int i, int j) {
+    
+    //null case
+    if (i == 0 || j == 0) {
+      return 0;
     }
+
+    // test if the last character of each string match
+    if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
+      return find(s1, s2, i - 1, j - 1) + 1;
+    }
+
+    return Integer.max(find(s1, s2, i - 1, j), find(s1, s2, i, j - 1));
+
+
   }
 
   public static void main(String[] args) {
